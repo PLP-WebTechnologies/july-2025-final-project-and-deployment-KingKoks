@@ -1,90 +1,226 @@
-# 📦 Final Assignment: Build, Organize, and Deploy a Multipage Website
+website/
+│── index.html        (Home)
+│── about.html        (About)
+│── contact.html      (Contact)
+│── style.css         (Styling & responsive layout)
+│── script.js         (Form validation + slider interactivity)
+│── images/           (place images like slide1.jpg, slide2.jpg, etc.)
 
-You're now ready to bring everything together—HTML, CSS, JavaScript, planning, structure, and deployment. This final project challenges you to **conceptualize, build, and deploy a multi-page website** that is responsive, interactive, and ready for the real world.
 
-This assignment will guide you from planning your site all the way to deploying it online. Let’s make your project *production-worthy*! 🚀
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home | My Website</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">MySite</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
----
+  <main>
+    <section class="hero">
+      <h1>Welcome to My Website</h1>
+      <p>Built with HTML5, CSS3, and JavaScript</p>
+    </section>
 
-## 🌐🎯 Part 1: Planning and Organizing a Multipage Website
+    <section class="slider-section">
+      <h2>Image Slider</h2>
+      <div class="slider">
+        <img src="images/slide1.jpg" alt="Slide 1" class="slide active" />
+        <img src="images/slide2.jpg" alt="Slide 2" class="slide" />
+        <img src="images/slide3.jpg" alt="Slide 3" class="slide" />
+      </div>
+    </section>
+  </main>
 
-Before you write any code, take time to plan:
+  <footer>
+    <p>&copy; 2025 MySite. All rights reserved.</p>
+  </footer>
 
-* Define your website's purpose (portfolio, product showcase, blog, etc.)
-* Outline 3–5 pages (e.g., Home, About, Services, Contact, Gallery)
-* Sketch or describe the layout of each page
-* Map out internal navigation (how pages link to one another)
+  <script src="script.js"></script>
+</body>
+</html>
 
-**Goal:** Show intentional structure and user journey across the site.
 
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About | My Website</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">MySite</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-## 🌍💻 Part 2: Build the Website Using HTML5, CSS, and JavaScript
+  <main>
+    <section class="content">
+      <h1>About Us</h1>
+      <p>This is a demo responsive website created using semantic HTML5, styled with CSS3, and powered by JavaScript interactivity.</p>
+    </section>
+  </main>
 
-Using your plan, begin building:
+  <footer>
+    <p>&copy; 2025 MySite. All rights reserved.</p>
+  </footer>
+</body>
+</html>
 
-* Use HTML5 for semantic structure
-* Apply CSS for responsive layout, styling, and animations
-* Use JavaScript to add interactivity (menus, forms, toggles, dynamic content)
 
-Each page should:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | My Website</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">MySite</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-* Be mobile-responsive
-* Share a consistent layout/header/footer
-* Include at least one interactive element (e.g., form validation, toggle menu, animation on scroll)
+  <main>
+    <section class="content">
+      <h1>Contact Us</h1>
+      <form id="contactForm">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Enter your name" />
 
-**Goal:** Integrate everything you’ve learned in a cohesive, functioning project.
+        <label for="email">Email</label>
+        <input type="text" id="email" placeholder="Enter your email" />
 
----
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Write your message"></textarea>
 
-## 🛠️🚀 Part 3: Best Practices for Code Organization
+        <button type="submit">Send</button>
+        <p id="formMessage"></p>
+      </form>
+    </section>
+  </main>
 
-Before deployment, refactor your project to follow production-friendly practices:
+  <footer>
+    <p>&copy; 2025 MySite. All rights reserved.</p>
+  </footer>
 
-* Organize files in folders (`/css`, `/js`, `/images`, etc.)
-* Write clean, modular, and commented code
-* Use meaningful file names and relative paths
-* Validate your HTML/CSS and test on different screen sizes
+  <script src="script.js"></script>
+</body>
+</html>
 
-**Goal:** Prepare your codebase to be readable, maintainable, and scalable.
 
----
+/* Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, sans-serif; background: #f8f9fa; color: #333; }
 
-## 🌐🚀 Part 4: Introduction to Hosting and Deployment
+/* Navbar */
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: #333; }
+.logo { color: white; font-weight: bold; font-size: 1.2rem; }
+.nav-links { list-style: none; display: flex; gap: 1rem; }
+.nav-links a { color: white; padding: 0.5rem; }
+.nav-links a.active, .nav-links a:hover { background: #555; border-radius: 4px; }
 
-Once your project is complete, choose a method to **host your site online**.
+/* Hero */
+.hero { text-align: center; padding: 3rem 1rem; background: #007bff; color: white; }
 
-You can use:
+/* Slider */
+.slider { max-width: 600px; margin: 2rem auto; position: relative; }
+.slide { display: none; width: 100%; border-radius: 8px; }
+.slide.active { display: block; }
 
-* **GitHub Pages** (great for portfolios and static sites)
-* **Netlify** (powerful CI/CD features and easy form support)
-* **Vercel** (lightning-fast deployment for frontend projects)
+/* Content & Forms */
+.content { padding: 2rem; max-width: 800px; margin: auto; }
+form { display: flex; flex-direction: column; gap: 1rem; }
+input, textarea { padding: 0.75rem; border: 1px solid #ccc; border-radius: 6px; }
+button { padding: 0.75rem; background: #007bff; color: white; border: none; border-radius: 6px; cursor: pointer; }
+button:hover { background: #0056b3; }
+#formMessage { font-weight: bold; }
 
-Deploy your project and confirm that:
+/* Footer */
+footer { text-align: center; padding: 1rem; background: #333; color: white; margin-top: 20px; }
 
-* All links and scripts work
-* It loads properly on mobile and desktop
-* It has a clear, shareable URL
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links { flex-direction: column; gap: 0.5rem; }
+  .hero h1 { font-size: 1.8rem; }
+}
 
-**Goal:** Publish your work online and make it accessible to the world.
 
----
+// ==========================
+// Image Slider (Home Page)
+// ==========================
+let currentSlide = 0;
+const slides = document.querySelectorAll(".slide");
 
-## Deliverables
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle("active", i === index);
+  });
+}
 
-1. A GitHub repository containing:
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
 
-   * Your complete project code, properly organized
-   * A `README.md` file explaining your project purpose, structure, and live URL
-2. A live deployed website (hosted via GitHub Pages, Netlify, or Vercel)
+// Auto-slide every 3s
+if (slides.length > 0) {
+  setInterval(nextSlide, 3000);
+  showSlide(currentSlide);
+}
 
----
+// ==========================
+// Contact Form Validation
+// ==========================
+const form = document.getElementById("contactForm");
+if (form) {
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+    const msgEl = document.getElementById("formMessage");
 
-## Outcome
+    if (name.length < 2) {
+      msgEl.textContent = "Sosha Softness.";
+      msgEl.style.color = "red";
+    } else if (!/^[^@]+@[^@]+\.[^@]+$/.test(email)) {
+      msgEl.textContent = "SoshaSoftnesd@gmail.com.";
+      msgEl.style.color = "red";
+    } else if (message.length < 10) {
+      msgEl.textContent = "The best paper from Kasi.";
+      msgEl.style.color = "red";
+    } else {
+      msgEl.textContent = "✅ Thank you, " + name + "! Your message has been sent.";
+      msgEl.style.color = "green";
+      form.reset();
+    }
+  });
+}
 
-* Clarity and thoroughness of planning documentation
-* Proper use of HTML5, CSS, and JavaScript across multiple pages
-* Responsive and accessible design
-* Clean, well-organized, and commented code
-* Successful live deployment with a working link
-* Evidence of following best practices
+
